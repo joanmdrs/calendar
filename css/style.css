@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    font-family: arial;
+    background-color: white;
+
+}
+
+h1 {
+    margin: 0;
+    background-color: red;
+    color: white;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 5px solid white;
+    text-align: center;
+}
+
+table {
+    border: 1px solid white;
+
+}
+
+table tr td {
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+}
+
+table tr td {
+    padding: 10px;
+    color: greenyellow;
+}
+
+table tr td:last-child {
+    border-right: none;
+}
+
+table tfoot tr:last-child td:last-child {
+    border-bottom: none;
+}
+
+table thead tr td {
+    background-color: #222;
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+}
+
+table tbody tr:first-child td {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+
+}
+
+table tfoot tr td {
+    text-align: right;
+    font-size: 14px;
+    background-color: white;
+    color: red;
+}
+
+table tbody td {
+    background-color: #555;
+}
