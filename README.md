@@ -1,8 +1,8 @@
 <h1 align="center"> 🗓️ Calendário utilizando JavaScript Puro 👨‍💻</h1>
 
-<p align="justify"> O código contido neste repositório representa a criação de um calendário utilizando a linguagem de marcação HTML, juntamente com a linguagem de scripts JavaScript e do mecanismo 
-de incorporação de estilos CSS. Ao carregar o arquivo .html em um browser, é exibido de forma dinâmica na interface a representação de um calendário referente mês atual, o qual 
-também permite que o usuário caminhe pelos outros meses do ano. </p>
+<p align="justify"> 
+  O código contido neste repositório representa a criação de um calendário utilizando a linguagem de marcação HTML, juntamente com a linguagem de scripts JavaScript e do mecanismo de incorporação de estilos CSS. Ao carregar o arquivo .html em um browser, é exibido de forma dinâmica na interface a representação de um calendário referente ao mês atual, o qual permite que o usuário caminhe pelos outros meses do ano. O código foi escrito seguindo os passos descritos da playlist "Calendário HTML, CSS e JavaScript" do canal do YouTube <a href="https://www.youtube.com/channel/UCC-LTYWG-jRmOpKAzc-YWPw" target="_blank"> Programar </a> .
+</p>
 
 <div align="center">
   <img alt="Calendário" width="200" weight="200"  src="https://cdn-icons.flaticon.com/png/512/297/premium/297443.png?token=exp=1640887198~hmac=31661ec90ddf9ff0541ca7c1da5c8cfc">
@@ -31,11 +31,7 @@ também permite que o usuário caminhe pelos outros meses do ano. </p>
 
 <div align="center"> 
   <h3> Fonte </h3>
-  <p align="justify">
-    O código foi escrito seguindo os passos descritos da playlist "Calendário HTML, CSS e JavaScript" do canal do YouTube "Programar"
-    
-    <a href="https://www.youtube.com/watch?v=d5wv3d9XGIs&list=PLtbc1r2X-Wj-2sjTCd7ztwigQR8dGGWa6" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a> 
+  <a href="https://www.youtube.com/watch?v=d5wv3d9XGIs&list=PLtbc1r2X-Wj-2sjTCd7ztwigQR8dGGWa6" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a> 
     
     
-  </p>
 </div>
