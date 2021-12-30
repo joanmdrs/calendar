@@ -11,10 +11,12 @@ var meses = [
 
 var body = document.querySelector('body');
 
-var h1 = document.createElement('h1');
-h1.innerText = "Calendário em JS";
+var div = document.createElement('div');
+var h2 = document.createElement('h2');
+h2.innerText = "Calendário em JS";
+div.appendChild(h2);
 
-body.appendChild(h1);
+body.appendChild(div);
 
 const defineVariaveisDatas = () => {
     dataHora.setDate(1);
@@ -35,29 +37,38 @@ const imprimeCalendario = () => {
     table.setAttribute('cellpadding','0');
     table.setAttribute('cellspacing','0');
 
+    // Preenchendo o cabeçalho 
     var thead = document.createElement('thead');
     var tr = document.createElement('tr');
 
+    // Criando o botão de voltar
     var td = document.createElement('td');
     td.innerHTML = "<button onclick='voltarMes()'> < </button>";
     tr.appendChild(td);
 
+    // Pegando o nome do mês corrente e o ano
     var td = document.createElement('td');
     td.innerText = meses[mes] + " " + ano;
     td.setAttribute('colspan','5');
     tr.appendChild(td);
+    thead.appendChild(tr);
 
+    // Criando botão de avançar
     var td = document.createElement('td');
     td.innerHTML = "<button onclick='avancarMes()'> > </button>"
     tr.appendChild(td);
 
+    // Criando o corpo da tabela
+
     var tbody = document.createElement("tbody");
 
+    // Montando os elementos da tabela(tabela, thead, tbody);
+    
     table.appendChild(thead);
     table.appendChild(tbody);
-    thead.appendChild(tr);
-
     body.appendChild(table);
+
+    // Gerando a tabela
 
     imprimeDiasDaSemana(tbody);
     imprimeDiasMesCorrente(tbody);
