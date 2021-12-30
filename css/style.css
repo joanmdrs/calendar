@@ -17,6 +17,8 @@ h1 {
 
 table {
     border: 1px solid white;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -45,11 +47,34 @@ table thead tr td {
     font-weight: bold;
 }
 
+table thead tr td button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: lightcoral;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all ease-in 0.2s;
+}
+
+table thead tr td button:hover {
+    background: lightseagreen;
+
+}
+
 table tbody tr:first-child td {
     background-color: #333;
     color: white;
     font-weight: bold;
 
+}
+
+table tbody tr td.fds {
+    background: rgb(196, 55, 55);
+    color: white;
 }
 
 table tfoot tr td {
@@ -62,3 +87,4 @@ table tfoot tr td {
 table tbody td {
     background-color: #555;
 }
+

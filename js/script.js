@@ -1,17 +1,13 @@
 var dataHora = new Date();
 dataHora.setDate(1);
-dataHora.setMonth(1);
 var dia = dataHora.getDate();
 var mes = dataHora.getMonth();
 var ano = dataHora.getFullYear();
-var diaSemana = dataHora.getDay();
-
 
 var meses = [
     "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
     "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
 ];
-
 
 var body = document.querySelector('body');
 
@@ -20,37 +16,82 @@ h1.innerText = "Calendário em JS";
 
 body.appendChild(h1);
 
-var table = document.createElement('table');
-table.setAttribute('cellpadding','0');
-table.setAttribute('cellspacing','0');
+const defineVariaveisDatas = () => {
+    dataHora.setDate(1);
+    dia = dataHora.getDate();
+    mes = dataHora.getMonth();
+    ano = dataHora.getFullYear();
+}
 
-var thead = document.createElement('thead');
-var tr = document.createElement('tr');
-var td = document.createElement('td');
-td.innerText = meses[mes] + " " + ano;
-td.setAttribute('colspan','7');
+const imprimeCalendario = () => {
 
-var tbody = document.createElement("tbody");
+    let existe = document.querySelector('table');
 
-table.appendChild(thead);
-table.appendChild(tbody);
-thead.appendChild(tr);
+    if(existe){
+        existe.remove();
+    }
 
-tr.appendChild(td);
+    var table = document.createElement('table');
+    table.setAttribute('cellpadding','0');
+    table.setAttribute('cellspacing','0');
 
-const imprimeDiasDaSemana = () => {
+    var thead = document.createElement('thead');
+    var tr = document.createElement('tr');
+
+    var td = document.createElement('td');
+    td.innerHTML = "<button onclick='voltarMes()'> < </button>";
+    tr.appendChild(td);
+
+    var td = document.createElement('td');
+    td.innerText = meses[mes] + " " + ano;
+    td.setAttribute('colspan','5');
+    tr.appendChild(td);
+
+    var td = document.createElement('td');
+    td.innerHTML = "<button onclick='avancarMes()'> > </button>"
+    tr.appendChild(td);
+
+    var tbody = document.createElement("tbody");
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    thead.appendChild(tr);
+
+    body.appendChild(table);
+
+    imprimeDiasDaSemana(tbody);
+    imprimeDiasMesCorrente(tbody);
+}
+
+const voltarMes = () => {
+    dataHora.setMonth(dataHora.getMonth() - 1);
+    defineVariaveisDatas();
+    imprimeCalendario();
+}
+
+const avancarMes = () => {
+    dataHora.setMonth(dataHora.getMonth() + 1);
+    defineVariaveisDatas();
+    imprimeCalendario();
+}
+
+const imprimeDiasDaSemana = (tbody) => {
     let dias = ["DOM","SEG","TER","QUA","QUI","SEX","SAB"];
     let tr = document.createElement('tr');
 
     for(var dia of dias){
+        
         var td = document.createElement('td');
+        if(dia === 'DOM' || dia === 'SAB'){
+            td.setAttribute("class", "fds");
+        }
         td.innerText = dia;
         tr.appendChild(td);
     }
     tbody.appendChild(tr);
 }
 
-const imprimeDiasMesCorrente = () => {
+const imprimeDiasMesCorrente = (tbody) => {
     var tr = document.createElement('tr');
     var comecaNoDia = dataHora.getDay();
     var terminaNoDia = null;
@@ -70,6 +111,9 @@ const imprimeDiasMesCorrente = () => {
             terminaNoDia = dataHoraCopia.getDay();
             nDia++;
         }
+        if(x % 7 === 0 || x % 7 === 1){
+            td.setAttribute("class", "fds");
+        }
         tr.appendChild(td);
 
         if (x % 7 === 0){
@@ -85,6 +129,7 @@ const imprimeDiasMesCorrente = () => {
         td.innerText = '';
         tr.appendChild(td);
     }
+    td.setAttribute("class", "fds");
 
     tbody.appendChild(tr);
 }
@@ -97,26 +142,27 @@ const pegaUltimoDiaMes = (data) => {
     return dataCopia.getDate();
 }
 
-const imprimeDiasNumericos = () => {
-    var tr = document.createElement('tr');
+imprimeCalendario();
 
-    for (var dia = 1; dia <= 31; dia++){
-        var td = document.createElement('td');
-        td.innerText = dia;
-        tr.appendChild(td);
 
-        if (dia % 7 === 0){
-            tbody.appendChild(tr);
-            var tr = document.createElement('tr');
-        }
-    }
-    tbody.appendChild(tr);
-}
+// const imprimeDiasNumericos = () => {
+//     var tr = document.createElement('tr');
 
-body.appendChild(table);
+//     for (var dia = 1; dia <= 31; dia++){
+//         var td = document.createElement('td');
+//         td.innerText = dia;
+//         tr.appendChild(td);
 
-imprimeDiasDaSemana();
-imprimeDiasMesCorrente();
+//         if (dia % 7 === 0){
+//             tbody.appendChild(tr);
+//             var tr = document.createElement('tr');
+//         }
+//     }
+//     tbody.appendChild(tr);
+// }
+
+// body.appendChild(table);
+
+// imprimeDiasDaSemana();
+// imprimeDiasMesCorrente();
 //imprimeDiasNumericos();
-
-var proximoMes = new Date(dataHora).setMonth(mes + 1);
