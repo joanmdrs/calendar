@@ -26,3 +26,16 @@ também permite que o usuário caminhe pelos outros meses do ano. </p>
   <img align="center" alt="Canva" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg">
   <img align="center" alt="Chrome" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" />
 </div>
+
+<br>
+
+<div align="center"> 
+  <h3> Fonte </h3>
+  <p align="justify">
+    O código foi escrito seguindo os passos descritos da playlist "Calendário HTML, CSS e JavaScript" do canal do YouTube "Programar"
+    
+    <a href="https://www.youtube.com/watch?v=d5wv3d9XGIs&list=PLtbc1r2X-Wj-2sjTCd7ztwigQR8dGGWa6" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a> 
+    
+    
+  </p>
+</div>
